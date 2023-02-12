@@ -1,0 +1,48 @@
+:root {
+    --primary:#13e36d;
+    --secondary: #9f9fff;
+    --text-color: #1d1d1d;
+    --bg-color: #ffffff;
+    --border-color: #dedede;
+    --light-hover: #dfdfdf;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: var(--secondary);
+    color: var(--text-color);
+    border-radius: 5px;
+}
+
+.opacity-70 {
+    opacity: 70%;
+}
+
+/* ----- flex utils ----- */
+
+.flex-row-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ----- text utils ----- */
+
+.text-center {
+    text-align: center;
+}
