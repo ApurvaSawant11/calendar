@@ -47,5 +47,5 @@ header {
 .cell {
     flex: 1 1 0%;   
     border: 1px solid var(--border-color);
-
+    padding: 4px;
 }
