@@ -1,0 +1,51 @@
+/* ----- header ----- */
+
+header {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.month-name {
+    padding: 1rem;
+    font-weight: 500;
+}
+
+.chevron-btn {
+    border-radius: 50%;
+    padding: 0.25rem;
+    cursor: pointer;
+}
+
+.chevron-btn:hover {
+    background-color: var(--light-hover);
+}
+
+/* ----- month ----- */
+
+.month-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0%;
+}
+
+.week-days-row {
+    display: flex;
+}
+
+.day {
+    padding: 1rem 0;
+    flex: 1 1 0%;
+    font-weight: 600;
+}
+
+.week-dates-row {
+    display: flex;
+    flex: 1 1 0%;
+}
+
+/* ----- day ----- */
+
+.cell {
+    flex: 1 1 0%;   
+    border: 1px solid var(--border-color);
+
+}
