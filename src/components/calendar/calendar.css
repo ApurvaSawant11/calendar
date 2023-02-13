@@ -32,7 +32,6 @@ header {
 }
 
 .day {
-    padding: 1rem 0;
     flex: 1 1 0%;
     font-weight: 600;
 }
@@ -69,4 +68,30 @@ header {
     overflow: hidden;
     text-overflow: clip;
     max-width: 12rem;
+}
+
+/* ----- media queries ----- */
+
+@media screen and (max-width: 1480px) {
+    .holiday {
+        max-width: 9rem;
+    }
+}
+
+@media screen and (max-width: 1180px) {
+    .holiday {
+        max-width: 8rem;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .holiday {
+        max-width: 6rem;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .holiday {
+        max-width: 4rem;
+    }
 }

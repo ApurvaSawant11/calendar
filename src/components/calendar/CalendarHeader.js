@@ -10,12 +10,13 @@ const CalendarHeader = () => {
 
   const addHoliday = () => {
     selectedDate
-      ? dispatch({ type: "SHOW_MODAL", payload: true })
+      ? dispatch({ type: "SHOW_MODAL", payload: { status: true, data: null } })
       : toast.error("Please select a date", {
           icon: <MdError size="2rem" />,
         });
   };
 
+  // user will be redirect to the current month and day
   const moveToCurrentDate = () => {
     dispatch({ type: "CHANGE_MONTH", payload: dayjs().month() });
     dispatch({ type: "UPDATE_SELECTED_DATE", payload: dayjs() });

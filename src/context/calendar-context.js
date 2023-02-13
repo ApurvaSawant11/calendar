@@ -14,6 +14,7 @@ const CalendarProvider = ({ children }) => {
   const [state, dispatch] = useReducer(calendarReducer, initialReducerData);
 
   useEffect(() => {
+    //on load, fetch public Indian holidays
     (async () => {
       const { data } = await axios.get(
         `https://www.googleapis.com/calendar/v3/calendars/en.indian%23holiday%40group.v.calendar.google.com/events?key=${process.env.REACT_APP_API_KEY}`
@@ -28,6 +29,7 @@ const CalendarProvider = ({ children }) => {
             end: curr.end.date,
             description: curr.description,
             color: "#749ef1",
+            type: "public",
           },
         ],
         []
@@ -46,7 +48,6 @@ const CalendarProvider = ({ children }) => {
     selectedDate: state.selectedDate,
     holidayList: state.holidayList,
     userHolidayList: state.userHolidayList,
-    holidaysOfTheMonth: state.holidaysOfTheMonth,
     todaysDate: state.todaysDate,
     dispatch: dispatch,
   };

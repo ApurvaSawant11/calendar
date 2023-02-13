@@ -26,7 +26,7 @@ function App() {
       />
       <CalendarHeader />
       <Month month={currentMonth} />
-      {showModal && <EventModal />}
+      {showModal.status && <EventModal holiday={showModal.data} />}
     </div>
   );
 }

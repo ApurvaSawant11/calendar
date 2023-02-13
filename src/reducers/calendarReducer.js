@@ -2,11 +2,10 @@ import dayjs from "dayjs";
 
 export const initialReducerData = {
   monthIndex: dayjs().month(),
-  showModal: false,
+  showModal: { status: false, data: null },
   selectedDate: dayjs(),
   holidayList: [],
   userHolidayList: JSON.parse(localStorage.getItem("holidays")) ?? [],
-  holidaysOfTheMonth: [],
   todaysDate: dayjs(),
 };
 
@@ -26,9 +25,48 @@ export const calendarReducer = (state, action) => {
       return { ...state, selectedDate: action.payload };
 
     case "ADD_HOLIDAY":
+      // Store user added holidays in localStorage
       const updatedList = [...state.userHolidayList, action.payload];
       localStorage.setItem("holidays", JSON.stringify(updatedList));
       return { ...state, userHolidayList: updatedList };
+
+    case "UPDATE_HOLIDAY":
+      let updatedList2;
+      if (action.payload.type === "public") {
+        updatedList2 = state.holidayList.map((holiday) => {
+          if (holiday._id === action.payload._id) {
+            return action.payload;
+          } else {
+            return holiday;
+          }
+        });
+        return { ...state, holidayList: updatedList2 };
+      } else {
+        updatedList2 = state.userHolidayList.map((holiday) => {
+          if (holiday._id === action.payload._id) {
+            return action.payload;
+          } else {
+            return holiday;
+          }
+        });
+        localStorage.setItem("holidays", JSON.stringify(updatedList2));
+        return { ...state, userHolidayList: updatedList2 };
+      }
+
+    case "DELETE_HOLIDAY":
+      let updatedList3;
+      if (action.payload.type === "public") {
+        updatedList3 = state.holidayList.filter(
+          (holiday) => holiday._id !== action.payload._id
+        );
+        return { ...state, holidayList: updatedList3 };
+      } else {
+        updatedList3 = state.userHolidayList.filter(
+          (holiday) => holiday._id !== action.payload._id
+        );
+        localStorage.setItem("holidays", JSON.stringify(updatedList3));
+        return { ...state, userHolidayList: updatedList3 };
+      }
 
     case "SHOW_MODAL":
       return { ...state, showModal: action.payload };
