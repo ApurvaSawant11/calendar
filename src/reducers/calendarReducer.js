@@ -49,6 +49,7 @@ export const calendarReducer = (state, action) => {
             return holiday;
           }
         });
+        localStorage.setItem("holidays", JSON.stringify(updatedList2));
         return { ...state, userHolidayList: updatedList2 };
       }
 
@@ -63,6 +64,7 @@ export const calendarReducer = (state, action) => {
         updatedList3 = state.userHolidayList.filter(
           (holiday) => holiday._id !== action.payload._id
         );
+        localStorage.setItem("holidays", JSON.stringify(updatedList3));
         return { ...state, userHolidayList: updatedList3 };
       }
 
