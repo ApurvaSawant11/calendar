@@ -1,10 +1,18 @@
+@import url("https://cdn.jsdelivr.net/gh/ApurvaSawant11/Dazzle-UI-Components@development/components/components.min.css");
 :root {
     --primary:#13e36d;
     --secondary: #9f9fff;
     --text-color: #1d1d1d;
-    --bg-color: #ffffff;
-    --border-color: #dedede;
+    --theme-bg: #ffffff;
+    --border-color: #a9a8a8;
     --light-hover: #dfdfdf;
+    --blue: #6969ed;
+    /*!important is used to override react toastify colors */
+    --toastify-color-info: var(--info) !important;
+    --toastify-color-success: var(--secondary) !important;
+    --toastify-color-warning: var(--warning) !important;
+    --toastify-color-error: var(--danger) !important;
+    --toastify-text-color-light: var(--text-color) !important;
 }
 
 *{
@@ -29,20 +37,10 @@
     border-radius: 5px;
 }
 
-.opacity-70 {
-    opacity: 70%;
-}
-
-/* ----- flex utils ----- */
-
-.flex-row-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* ----- text utils ----- */
-
-.text-center {
-    text-align: center;
+.palette-color-circle {
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  width: 2rem;
+  height: 2rem;
+  margin: 5px;
 }
