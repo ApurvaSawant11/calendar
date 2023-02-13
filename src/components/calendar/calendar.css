@@ -5,7 +5,7 @@ header {
 }
 
 .month-name {
-    padding: 1rem;
+    width: 16rem;
     font-weight: 500;
 }
 
@@ -48,4 +48,25 @@ header {
     flex: 1 1 0%;   
     border: 1px solid var(--border-color);
     padding: 4px;
+}
+
+.selected-date {
+    background-color: var(--info-hover);
+}
+
+.today {
+    background: var(--blue);
+    border-radius: 50%;
+    max-width: max-content;
+    padding: 2px 4px;
+    color: var(--white-color);
+}
+
+.holiday {
+    border-radius: 4px;
+    padding: 2px 4px;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: clip;
+    max-width: 12rem;
 }

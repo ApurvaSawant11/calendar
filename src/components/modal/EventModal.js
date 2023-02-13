@@ -1,13 +1,17 @@
-import { useCalendar } from "../../context";
+import { useCalendar } from "context";
 import "./modal.css";
 import { IoMdClose } from "react-icons/io";
+import { MdError } from "react-icons/md";
 import { useState } from "react";
 import dayjs from "dayjs";
 import { v4 as uuid } from "uuid";
+import { toast } from "react-toastify";
+import { ColorPalette } from "components";
 
 const EventModal = () => {
   const [holidayTitle, setHolidayTitle] = useState("");
   const [holidayDes, setHolidayDes] = useState("");
+  const [holidayColor, setHolidayColor] = useState("");
   const { selectedDate, dispatch } = useCalendar();
 
   const addHoliday = () => {
@@ -19,12 +23,16 @@ const EventModal = () => {
           title: holidayTitle,
           description: holidayDes,
           start: dayjs(selectedDate).format("YYYY-MM-DD"),
+          color: holidayColor,
         },
       });
       dispatch({ type: "SHOW_MODAL", payload: false });
       setHolidayTitle("");
       setHolidayDes("");
     } else {
+      toast.error("Please enter title", {
+        icon: <MdError size="2rem" />,
+      });
     }
   };
   return (
@@ -68,6 +76,11 @@ const EventModal = () => {
             <span className="bar"></span>
             <label className="placeholder">Description</label>
           </div>
+
+          <ColorPalette
+            holidayColor={holidayColor}
+            setHolidayColor={setHolidayColor}
+          />
 
           <div className=" flex-row-center">
             <button

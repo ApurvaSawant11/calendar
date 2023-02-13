@@ -19,6 +19,7 @@ export const calendarReducer = (state, action) => {
       return {
         ...state,
         monthIndex: action.payload,
+        selectedDate: null,
       };
 
     case "UPDATE_SELECTED_DATE":

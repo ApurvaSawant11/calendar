@@ -27,6 +27,7 @@ const CalendarProvider = ({ children }) => {
             start: curr.start.date,
             end: curr.end.date,
             description: curr.description,
+            color: "#749ef1",
           },
         ],
         []
