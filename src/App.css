@@ -1,9 +1,10 @@
+@import url("https://cdn.jsdelivr.net/gh/ApurvaSawant11/Dazzle-UI-Components@development/components/components.min.css");
 :root {
     --primary:#13e36d;
     --secondary: #9f9fff;
     --text-color: #1d1d1d;
-    --bg-color: #ffffff;
-    --border-color: #dedede;
+    --theme-bg: #ffffff;
+    --border-color: #a9a8a8;
     --light-hover: #dfdfdf;
 }
 
@@ -27,22 +28,4 @@
     background-color: var(--secondary);
     color: var(--text-color);
     border-radius: 5px;
-}
-
-.opacity-70 {
-    opacity: 70%;
-}
-
-/* ----- flex utils ----- */
-
-.flex-row-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* ----- text utils ----- */
-
-.text-center {
-    text-align: center;
 }

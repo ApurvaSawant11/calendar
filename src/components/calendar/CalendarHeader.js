@@ -6,9 +6,13 @@ import { useCalendar } from "../../context";
 const CalendarHeader = () => {
   const { monthIndex, dispatch } = useCalendar();
 
+  const addHoliday = () => {
+    dispatch({ type: "SHOW_MODAL", payload: true });
+  };
+
   return (
     <header className="flex-row-center">
-      <button className="btn">Today</button>
+      <button className="button primary">Today</button>
       <h1 className="month-name">
         {dayjs(new Date(dayjs().year(), monthIndex)).format("MMMM YYYY")}
       </h1>
@@ -28,6 +32,9 @@ const CalendarHeader = () => {
           }
         />
       </div>
+      <button className="button primary" onClick={addHoliday}>
+        Add Holiday
+      </button>
     </header>
   );
 };
