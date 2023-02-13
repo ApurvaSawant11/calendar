@@ -6,7 +6,7 @@ const Month = ({ month }) => {
     <div className="month-container">
       <div className="week-days-row">
         {days.map((d, index) => (
-          <p className="day text-center" key={index}>
+          <p className="day text-center m-0 py-0p5" key={index}>
             {d.toUpperCase()}
           </p>
         ))}

@@ -10,7 +10,7 @@ const CalendarHeader = () => {
 
   const addHoliday = () => {
     selectedDate
-      ? dispatch({ type: "SHOW_MODAL", payload: true })
+      ? dispatch({ type: "SHOW_MODAL", payload: { status: true, data: null } })
       : toast.error("Please select a date", {
           icon: <MdError size="2rem" />,
         });

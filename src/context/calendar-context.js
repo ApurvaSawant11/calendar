@@ -28,6 +28,7 @@ const CalendarProvider = ({ children }) => {
             end: curr.end.date,
             description: curr.description,
             color: "#749ef1",
+            type: "public",
           },
         ],
         []
