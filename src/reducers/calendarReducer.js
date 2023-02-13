@@ -6,7 +6,6 @@ export const initialReducerData = {
   selectedDate: dayjs(),
   holidayList: [],
   userHolidayList: JSON.parse(localStorage.getItem("holidays")) ?? [],
-  holidaysOfTheMonth: [],
   todaysDate: dayjs(),
 };
 
@@ -26,6 +25,7 @@ export const calendarReducer = (state, action) => {
       return { ...state, selectedDate: action.payload };
 
     case "ADD_HOLIDAY":
+      // Store user added holidays in localStorage
       const updatedList = [...state.userHolidayList, action.payload];
       localStorage.setItem("holidays", JSON.stringify(updatedList));
       return { ...state, userHolidayList: updatedList };

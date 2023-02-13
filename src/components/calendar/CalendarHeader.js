@@ -16,6 +16,7 @@ const CalendarHeader = () => {
         });
   };
 
+  // user will be redirect to the current month and day
   const moveToCurrentDate = () => {
     dispatch({ type: "CHANGE_MONTH", payload: dayjs().month() });
     dispatch({ type: "UPDATE_SELECTED_DATE", payload: dayjs() });
