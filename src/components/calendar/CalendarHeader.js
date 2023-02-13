@@ -18,6 +18,7 @@ const CalendarHeader = () => {
 
   const moveToCurrentDate = () => {
     dispatch({ type: "CHANGE_MONTH", payload: dayjs().month() });
+    dispatch({ type: "UPDATE_SELECTED_DATE", payload: dayjs() });
   };
 
   return (

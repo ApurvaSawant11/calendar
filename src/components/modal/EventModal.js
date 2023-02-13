@@ -11,7 +11,7 @@ import { ColorPalette } from "components";
 const EventModal = () => {
   const [holidayTitle, setHolidayTitle] = useState("");
   const [holidayDes, setHolidayDes] = useState("");
-  const [holidayColor, setHolidayColor] = useState("");
+  const [holidayColor, setHolidayColor] = useState("#deb8ff");
   const { selectedDate, dispatch } = useCalendar();
 
   const addHoliday = () => {
